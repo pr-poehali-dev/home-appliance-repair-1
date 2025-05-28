@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button";
+import HeroSection from "@/components/sections/HeroSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import AdvantagesSection from "@/components/sections/AdvantagesSection";
 import {
   Card,
   CardContent,
@@ -6,168 +8,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const services = [
-    {
-      title: "Стиральные машины",
-      description: "Ремонт любых поломок, замена подшипников, ремней, насосов",
-      icon: "Washing",
-    },
-    {
-      title: "Холодильники",
-      description: "Заправка фреоном, ремонт компрессора, замена термостата",
-      icon: "Refrigerator",
-    },
-    {
-      title: "Плиты и духовки",
-      description: "Ремонт газовых и электрических плит, духовых шкафов",
-      icon: "ChefHat",
-    },
-    {
-      title: "Посудомоечные машины",
-      description:
-        "Устранение засоров, ремонт насосов, программного обеспечения",
-      icon: "Utensils",
-    },
-    {
-      title: "Микроволновки",
-      description: "Ремонт магнетрона, замена слюды, настройка мощности",
-      icon: "Microwave",
-    },
-    {
-      title: "Мелкая техника",
-      description: "Утюги, чайники, миксеры, блендеры и другая техника",
-      icon: "Zap",
-    },
-  ];
-
-  const advantages = [
-    {
-      title: "Опыт 15+ лет",
-      description: "Профессиональный ремонт с гарантией качества",
-      icon: "Award",
-    },
-    {
-      title: "Выезд на дом",
-      description: "Бесплатная диагностика и ремонт у вас дома",
-      icon: "Home",
-    },
-    {
-      title: "Гарантия 6 месяцев",
-      description: "На все виды работ и установленные запчасти",
-      icon: "Shield",
-    },
-    {
-      title: "Работаем 24/7",
-      description: "Аварийный выезд в любое время суток",
-      icon: "Clock",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mb-6 font-montserrat">
-            Ремонт бытовой техники
-          </h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Быстрый и качественный ремонт стиральных машин, холодильников, плит
-            и другой техники. Выезд мастера на дом в день обращения.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button
-              size="lg"
-              className="bg-white text-blue-800 hover:bg-gray-100 px-8 py-3"
-            >
-              <Icon name="Phone" className="mr-2" />
-              Вызвать мастера
-            </Button>
-            <div className="text-center">
-              <p className="text-sm opacity-75">Звоните прямо сейчас:</p>
-              <p className="text-2xl font-bold">+7 (999) 123-45-67</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Badge variant="secondary" className="bg-white/20 text-white">
-              Гарантия 6 месяцев
-            </Badge>
-            <Badge variant="secondary" className="bg-white/20 text-white">
-              Выезд бесплатно
-            </Badge>
-            <Badge variant="secondary" className="bg-white/20 text-white">
-              Работаем 24/7
-            </Badge>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 font-montserrat">
-              Наши услуги
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ремонтируем любую бытовую технику с гарантией качества
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon
-                      name={service.icon}
-                      size={32}
-                      className="text-blue-600"
-                    />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center text-gray-600">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 font-montserrat">
-              Почему выбирают нас
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon
-                    name={advantage.icon}
-                    size={40}
-                    className="text-white"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  {advantage.title}
-                </h3>
-                <p className="text-gray-600">{advantage.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      <ServicesSection />
+      <AdvantagesSection />
 
       {/* Contact Section */}
       <section className="py-16 bg-blue-800 text-white">
